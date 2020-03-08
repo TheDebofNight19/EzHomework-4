@@ -1,14 +1,15 @@
 package com.github.TheDebofNight19;
+import com.sun.tracing.dtrace.ProviderAttributes;
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Tag("Test1")
-@DisplayName("TestJunit")
+@Tag("Test2")
+@DisplayName("TestAnotherJunit")
 
-public class TestJunit {
+public class TestAnotherJunit {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TestJunit.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TestAnotherJunit.class);
 
     @BeforeAll
     static void beforeAll(){
@@ -23,15 +24,15 @@ public class TestJunit {
 
     @Test
     @DisplayName("First test")
-    void testMethod1(){
-        LOG.info("The first test is complete.");
+    void testAnotherMethod1(){
+        LOG.info("First another test is complete.");
 
     }
 
     @Test
     @DisplayName("Second test")
-    void testMethod2(){
-        LOG.info("The second test is complete.");
+    void testAnotherMethod2(){
+        LOG.info("Second another test is complete.");
 
     }
 
