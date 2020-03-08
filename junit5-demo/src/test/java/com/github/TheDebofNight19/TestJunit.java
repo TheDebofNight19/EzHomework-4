@@ -1,7 +1,10 @@
 package com.github.TheDebofNight19;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("Test1")
 @DisplayName("TestJunit")
@@ -28,12 +31,16 @@ public class TestJunit {
 
     }
 
-    @Test
-    @DisplayName("Second test")
-    void testMethod2(){
-        LOG.info("The second test is complete.");
+    /**
+     * Параметризованный тест, который будет падать на ошибку на третьей итерации
+     */
 
+    @ParameterizedTest(name = "#{index} - Testing number = {0}")
+    @ValueSource(ints = {22, 33, -1})
+    void test_int_arrays_custom_name(int arg) {
+        assertTrue(arg > 0);
     }
+
 
     @AfterEach
     void afterEach(){
